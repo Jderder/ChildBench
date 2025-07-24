@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-  <h1 align="center"> Easy for Kids, Hard for AI: The Limits of LLMs in Early Learning Tasks
+  <h1 align="center"> Easy for Children, Hard for AI: The Limits of MLLMs in Early Learning Tasks
 Recognition </h1>
   <h3 align="center">ChildBench: A new benchmark dataset for Early education of MLLMs.</h3>
   
