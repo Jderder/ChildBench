@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-  <h1 align="center"> Easy for Children, Hard for AI: The Limits of MLLMs in Early Learning Tasks
+  <h1 align="center">✏️Easy for Children, Hard for AI: The Limits of MLLMs in Early Learning Tasks
 Recognition </h1>
   <h3 align="center">ChildBench: A new benchmark dataset for Early education of MLLMs.</h3>
   
@@ -39,7 +39,7 @@ Recognition </h1>
 The following figures list some classic examples in our dataset. You can click out [`Examples`](Examples) to view partial details of the dataset.
 
 ### Detail Information
-The following table [`Splits/`](Comparison/splits.png) lists the detailed information statistics of the splited dataset.
+The following table [`Splits/`](Dataset/type/splits.png) lists the detailed information statistics of the splited dataset.
 <br>
 You can find our dataset through the following path **_(Dataset/dataset)_** for more details.
 <br>
@@ -115,11 +115,12 @@ Each `json` file is of the following format:
 Each line is an individual data point.
  `question`  is the question with manual annotation, `input_image`  denotes name of the image, `options`  is reasonable numerical options.
 <br>
-It encompasses 5 capability evaluations across 10 task types, precisely aligning with early - education assessment scenarios. Details are viewable in the documentation:  [`U & O type/`](Dataset/type/Units_and_Object.png). 
+It encompasses 5 capability evaluations across 10 task types, precisely aligning with early - education assessment scenarios.
 
 ## 3 Experiment and Evaluation
 ### Experiment
 We have disclosed the inference code for the model in the directory **_(Code/experiment)_**,  as well as the fine-tuning code in the directory **_(Code/finetune)_**.
+-Note: Before using any code or scripts in this project, you need to manually supplement necessary path information in the relevant files, including but not limited to model path, training file path, and output path. 
 <br>
 - For all 8 open-sourse MLLMs, you can directly execute Python files in the directory **_(Code/experiment)_** to perform inference on models before and after fine-tuning: 
 ```
@@ -133,28 +134,26 @@ nohup python Phi-3.5-vision.py > log/Phi-3.5-vision.log 2>1& &
 nohup python Qwen2.5-VL.py > log/Qwen2.5-VL.log 2>1& &
 ```
 Due to the large amount of open source model code, you need to download it yourself through channels or call it directly from platforms such as [huggingface](https://huggingface.co).
-- For open-source models, You can execute Bash files using [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) and [ms-swift](https://github.com/modelscope/ms-swift) in the directory **_(Code/finetune)_** to perform fine-tuning:
+- For open-source models, You can execute Bash files using [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) and [ms-swift](https://github.com/modelscope/ms-swift) in the directory **_(Code/finetune)_** to perform fine-tuning.For models without provided Bash scripts, you can directly use LLaMA Factory's webui for fine-tuning with default parameters:
 ```
 nohup bash DeepSeek-VL.sh > log/DeepSeek-VL_train.log 2>1& &
 nohup bash InternVL3.sh > log/InternVL3_train.log 2>1& &
 nohup bash Llama-3.2-Vision.sh > log/Llama-3.2-Vision_train.log 2>1& &
 nohup bash LLaVA-v1.6.sh > log/LLaVA-v1.6_train.log 2>1& &
-nohup bash MiniCPM-V-2.6.sh > log/MiniCPM-V-2.6_train.log 2>1& &
 nohup bash mPLUG-Owl3.sh > log/mPLUG-Owl3_train.log 2>1& &
 nohup bash Phi-3.5-vision.sh > log/Phi-3.5-vision_train.log 2>1& &
-nohup bash Qwen2.5-VL.sh > log/Qwen2.5-VL_train.log 2>1& &
 ```
 - For gemini-2.5-pro and gpt-4o, you can directly execute our Python file in the directory **_(Code/close_models)_** to perform inferencing of the zero-shot, few-shot, provided that you prepare a key:
 ```
-python gemini2.5_zeroshot.py
-python gemini2.5_oneshot.py
-python gpt4o_zeroshot.py
-python gpt4o_oneshot.py
+python gemini_2-5_zero_shot.py
+python gemini_2-5_one_shot.py
+python gpt4o_zero_shot.py
+python gpt4o_one_shot.py
 ```
 Gemini needs to apply on the [official website](https://aistudio.google.com/app/apikey), and GPT4 needs to be purchased on the [official website](https://openai.com/).
 
 ### Evaluation
-You can process the results of model inference through the code we provide to calculate overall accuracy, overall P, R, F1 indicators, the accuracy of each physical quantity category. We integrate the calculation process into the Python files in the directory **_(Code/eval)_**:
+You can process the results of model inference through the code we provide to calculate overall accuracy, overall P, R, F1 indicators, and use a graphical interface to statistically calculate the accuracy rate of each subtask. We integrate the calculation process into the Python files in the directory **_(Code/eval)_**:
 ```
 python calculate_prf1.py
 python calculate_acc.py
