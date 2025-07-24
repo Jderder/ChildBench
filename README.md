@@ -47,7 +47,7 @@ _Due to the fact that only redirecting to the specified file is valid in anonymo
 
 
 ## 2 Access ChildBench
-Due to anonymity requirements, our dataset will be released at a later date.
+All images in the dataset can be viewed after downloading the compressed package in the **_(Dataset/images)_** directory.
 
 ###  Data Split
 As reported in the folloeing table, ChildBench contains 5,346 samples, divided into training, validation, and test sets according to a 7:1:2 ratio.
@@ -120,14 +120,14 @@ It encompasses 5 capability evaluations across 10 task types, precisely aligning
 ## 3 Experiment and Evaluation
 ### Experiment
 We have disclosed the inference code for the model in the directory **_(Code/experiment)_**,  as well as the fine-tuning code in the directory **_(Code/finetune)_**.
--Note: Before using any code or scripts in this project, you need to manually supplement necessary path information in the relevant files, including but not limited to model path, training file path, and output path. 
+- Note: Before using any code or scripts in this project, you need to manually supplement necessary path information in the relevant files, including but not limited to model path, training file path, and output path. 
 <br>
 - For all 8 open-sourse MLLMs, you can directly execute Python files in the directory **_(Code/experiment)_** to perform inference on models before and after fine-tuning: 
 ```
 nohup python DeepSeek-VL.py > log/DeepSeek-VL.log 2>1& &
 nohup python InternVL3.py > log/InternVL3.log 2>1& &
 nohup python Llama-3.2-Vision.py > log/Llama-3.2-Vision.log 2>1& &
-nohup python LLaVA-v1.6.py > log/LLaVA-v1.6.log 2>1& &
+nohup python LLaVA-v1.5.py > log/LLaVA-v1.6.log 2>1& &
 nohup python MiniCPM-V-2.6.py > log/MiniCPM-V-2.6.log 2>1& &
 nohup python mPLUG-Owl3.py > log/mPLUG-Owl3.log 2>1& &
 nohup python Phi-3.5-vision.py > log/Phi-3.5-vision.log 2>1& &
@@ -139,7 +139,7 @@ Due to the large amount of open source model code, you need to download it yours
 nohup bash DeepSeek-VL.sh > log/DeepSeek-VL_train.log 2>1& &
 nohup bash InternVL3.sh > log/InternVL3_train.log 2>1& &
 nohup bash Llama-3.2-Vision.sh > log/Llama-3.2-Vision_train.log 2>1& &
-nohup bash LLaVA-v1.6.sh > log/LLaVA-v1.6_train.log 2>1& &
+nohup bash LLaVA-v1.5.sh > log/LLaVA-v1.6_train.log 2>1& &
 nohup bash mPLUG-Owl3.sh > log/mPLUG-Owl3_train.log 2>1& &
 nohup bash Phi-3.5-vision.sh > log/Phi-3.5-vision_train.log 2>1& &
 ```
