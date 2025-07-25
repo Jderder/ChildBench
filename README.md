@@ -39,7 +39,7 @@ Recognition </h1>
 The following figures list some classic examples in our dataset. You can click out [`Examples`](Examples) to view partial details of the dataset.
 
 ### Detail Information
-The following table [`Splits/`](Dataset/type/splits.png) lists the detailed information statistics of the splited dataset.
+The following table [`Splits`](Dataset/type/splits.png) lists the detailed information statistics of the splited dataset.
 <br>
 You can find our dataset through the following path **_(Dataset/dataset)_** for more details.
 <br>
@@ -61,9 +61,9 @@ Each `json` file is of the following format:
   {
     "question_id": "1",
     "question": "Determine rows 1-4 separately. Which shape in each row is different from the other shapes?",
-    "category": "Observation_Skills-Spot_the_Differences",
+    "category": "Visual_Discrimination_odd_one_out",
     "input_image": [
-      "Observation_Skills_Spot_the_Differences_0012.png"
+      "Visual_Discrimination_odd_one_out_0012.png"
     ],
     "answer_type": "choice",
     "options": [
@@ -77,9 +77,9 @@ Each `json` file is of the following format:
   {
     "question_id": "2",
     "question": "What are the corresponding letters of the overlapping shapes in the picture from top to bottom?",
-    "category": "Spatial_Reasoning-Overlap_Order",
+    "category": "Spatial_Reasoning_image_overlapping_reasoning",
     "input_image": [
-      "Spatial_Reasoning_Overlap_Order_0252.png"
+      "Spatial_Reasoning_image_overlapping_reasoning_0252.png"
     ],
     "answer_type": "order",
     "answer": "A, E, C, D, B"
@@ -103,9 +103,9 @@ Each `json` file is of the following format:
   {
     "question_id": "4",
     "question": "How many cubes are there in the picture?",
-    "category": "Counting_Skills-Spatial_Counting",
+    "category": "Counting_Skill_spatial_counting",
     "input_image": [
-      "Counting_Skills_Spatial_Counting_0084.png"
+      "Counting_Skill_spatial_counting_0084.png"
     ],
     "answer_type": "blank",
     "answer": "7"
