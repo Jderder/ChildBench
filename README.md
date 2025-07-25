@@ -120,7 +120,8 @@ It encompasses 5 capability evaluations across 10 task types, precisely aligning
 ## 3 Experiment and Evaluation
 ### Experiment
 We have disclosed the inference code for the model in the directory **_(Code/experiment)_**,  as well as the fine-tuning code in the directory **_(Code/finetune)_**.
-Note: Before using any code or scripts in this project, you need to manually supplement necessary path information in the relevant files, including but not limited to model path, training file path, and output path. 
+
+> Note: Before using any code or scripts in this project, you need to manually supplement necessary path information in the relevant files, including but not limited to model path, training file path, and output path. 
 <br>
 - For all 8 open-sourse MLLMs, you can directly execute Python files in the directory **_(Code/experiment)_** to perform inference on models before and after fine-tuning: 
 ```
