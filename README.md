@@ -28,7 +28,7 @@ Recognition </h1>
   - [Experiment & Evaluation](#3-Experiment-and-Evaluation)
     - [Experiment](#Experiment)
     - [Evaluation](#Evaluation)
-  - [Paper Appendix](PaperAppendix.png)
+  - [Appendix](Appendix.png)
   - [License](#4-License)
   
 
